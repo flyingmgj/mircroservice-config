@@ -1,0 +1,20 @@
+spring:
+    profiles:
+        active:
+           -dev
+
+
+---
+spring:
+    profiles: dev
+    application:
+        name: microservicecloud-config-dev
+
+
+---
+spring:
+    profiles: dev
+    application:
+        name: microservicecloud-config-dev
+        
+# 使用UTF-8编码
