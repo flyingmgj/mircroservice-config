@@ -1,0 +1,78 @@
+spring:
+    profiles:
+        active:
+           -dev
+---
+server:
+    port: 8001
+
+spring:
+    profiles: dev
+    application:
+        name: mircroservice-config-client
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.gjt.mm.mysql.Driver
+        url: jdbc:mysql://localhost:3306/cloudDB01
+        username: root
+        password: 123
+        dbcp2:
+            min-idle: 5
+            initial-size: 5
+            max-total: 5
+            max-wait-millis: 200
+mybatis:
+    config-location: classpath:mybatis/mybatis.cfg.xml
+    type-aliases-package: com.tit.springcloud.entities
+    mapper-locations:
+        - classpath:mybatis/mapper/**/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001      # 修改微服务名称
+    prefer-ip-address: true                      # 设置ip地址访问
+info:
+  app.name: microservicecloud
+  company.name: www.magee.com
+  build.artifactId: "@project.artifactId@"
+  build.version: "@project.version@"
+  
+---
+server:
+    port: 8001
+
+spring:
+    profiles: test
+    application:
+        name: mircroservice-config-client
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.gjt.mm.mysql.Driver
+        url: jdbc:mysql://localhost:3306/cloudDB02
+        username: root
+        password: 123
+        dbcp2:
+            min-idle: 5
+            initial-size: 5
+            max-total: 5
+            max-wait-millis: 200
+mybatis:
+    config-location: classpath:mybatis/mybatis.cfg.xml
+    type-aliases-package: com.tit.springcloud.entities
+    mapper-locations:
+        - classpath:mybatis/mapper/**/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept8001      # 修改微服务名称
+    prefer-ip-address: true                      # 设置ip地址访问
+info:
+  app.name: microservicecloud
+  company.name: www.magee.com
+  build.artifactId: "@project.artifactId@"
+  build.version: "@project.version@"
+

@@ -1,0 +1,41 @@
+spring:
+    profiles:
+        active:
+           -dev
+
+
+---
+server:
+    port: 7001
+
+spring:
+    profiles: dev
+    application:
+        name: mircroservice-config-client
+        
+eureka:
+    instance:
+        hostname: eureka7001.com
+    client:
+        register-with-eureka: false
+        fetch-registry: false
+        service-url:
+            defaultZone: http://euraka7001.com:7001/euraka7001/
+---
+
+server:
+    port: 7001
+
+spring:
+    profiles: test
+    application:
+        name: mircroservice-config-client
+        
+eureka:
+    instance:
+        hostname: eureka7001.com
+    client:
+        register-with-eureka: false
+        fetch-registry: false
+        service-url:
+            defaultZone: http://euraka7001.com:7001/euraka7001/
