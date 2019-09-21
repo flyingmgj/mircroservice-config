@@ -30,7 +30,7 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone:http://euraka7001.com:7001/euraka7001/
   instance:
     instance-id: microservicecloud-dept8001      # 修改微服务名称
     prefer-ip-address: true                      # 设置ip地址访问
