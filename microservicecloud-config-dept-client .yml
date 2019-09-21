@@ -26,8 +26,7 @@ spring:
 mybatis:
     config-location: classpath:mybatis/mybatis.cfg.xml
     type-aliases-package: com.tit.springcloud.entity
-    mapper-locations:
-        - classpath:mybatis/mapper/**/*.xml
+    mapper-locations: classpath:mybatis/mapper/**/*.xml
 eureka:
   client:
     service-url:
